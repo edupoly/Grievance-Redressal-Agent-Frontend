@@ -51,9 +51,9 @@ function Navbar() {
             <div className="container-fluid">
                 <div className="d-flex align-items-center">
                     <i className="bi bi-building-fill text-warning display-6 me-2"></i>
-                    <h5 className='mb-0 text-white fw-bold'>
-                        International School
-                        <span className="d-block fs-6 fw-light text-warning opacity-75">Excellence in Education</span>
+                    <h5 className='mb-0 text-white fw-bold text-capitalize'>
+                        grievance redressal agent
+                        <span className="d-block fs-6 fw-semibold text-warning opacity-75">RealTime Customer Care</span>
                     </h5>
                 </div>
 
