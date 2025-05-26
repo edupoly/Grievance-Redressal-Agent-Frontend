@@ -16,6 +16,13 @@ export const schoolApi = createApi({
             body : branch
         })
     }),
+    getcustomerCare:builder.query({
+      query: () => ({
+        url: '/customercare',
+        method: 'GET',
+       
+      })
+    }),
     login : builder.mutation({
       query : (principal) =>({
           url : '/login',
@@ -67,6 +74,7 @@ export const schoolApi = createApi({
 })
 
 export const { useGetbranchesQuery,
+  useGetcustomerCareQuery,
   useAddBranchMutation,
   useLoginMutation,
   useGetcomplaintsBranchQuery,

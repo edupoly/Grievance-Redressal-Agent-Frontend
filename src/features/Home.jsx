@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDeleteBranchMutation, useGetbranchesQuery, useLazyGetbranchesQuery } from '../services/schoolApi'
+import { useDeleteBranchMutation, useGetbranchesQuery, useGetcustomerCareQuery, useLazyGetbranchesQuery } from '../services/schoolApi'
 import { Link, useAsyncError } from 'react-router-dom';
 import Zonalofficerdetails from './Zonalofficers/zonalofficerdetails';
 import { useGetzonalofficerdetailsQuery } from '../services/schoolZonalApi';
@@ -9,8 +9,10 @@ function Home() {
     var {isLoading:zloading,data:zonaldata} = useGetzonalofficerdetailsQuery()
     var [delbranchFn] = useDeleteBranchMutation();
     var [lazyfn]=useLazyGetbranchesQuery()
+    var {isLoading:cLoading,data:customerData}=useGetcustomerCareQuery();
     const role = localStorage.getItem('role');
     console.log("zonaldata:",zonaldata)
+    console.log("cLoading customerData",cLoading,customerData)
 
     async function delbranch(id){
         delbranchFn(id).then((res)=>{
@@ -63,7 +65,7 @@ function Home() {
                                 <div className="px-3 w-100 row justify-content-between align-items-center">
                                     <h5 className="col-9 text-success mb-1 fw-bold">Customer Care</h5>
                                     <div className='col-2 d-flex align-items-center gap-2 me-2'>
-                                        <h2 className="mb-0">{0|| 0} </h2>
+                                        <h2 className="mb-0">{ customerData && customerData?.data?.length || 0} </h2>
                                         <Link to={'/addcustomercare'}><i class="bi bi-plus-circle fs-4 text-dark fw-bold"></i></Link>
                                     </div>
                                 </div>

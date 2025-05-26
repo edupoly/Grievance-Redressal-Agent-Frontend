@@ -99,7 +99,7 @@ function getRouteIcon(label) {
         case 'add customercare': return 'bi-headset';
         case 'complaints': return 'bi-chat-left-text-fill';
         case 'dashboard': return 'bi-speedometer2';
-        default: return 'bi-circle';
+        default: return 'bi-house-door-fill';
     }
 }
 
